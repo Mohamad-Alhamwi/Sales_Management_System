@@ -19,7 +19,6 @@ const app = express() ;
 // Serving static files.
 app.use(express.static(path.join(__dirname, 'public'))) ;
 
-
 // EJS
 app.use(expressLayouts) ;
 app.set('view engine', 'ejs') ;
