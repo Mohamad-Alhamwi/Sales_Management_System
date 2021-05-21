@@ -7,7 +7,8 @@ const path = require('path');
 const dotenv = require('dotenv');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
-
+const flash = require('connect-flash');
+const session = require('express-session');
 
 // 
 const dashboard = require('./routes/dashboard');
@@ -39,6 +40,19 @@ app.use(express.urlencoded(
 app.use(express.json());
 
 
+// Express Session Midlleware.
+app.use(session(
+{
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
+
+
+// Connect Flash.
+app.use(flash());
+
+
 // Serving static files.
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -47,6 +61,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
+
+// Global Variables.
+app.use((req, res, next) =>
+{
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    next();
+});
 
 // Routes.
 app.use('/', dashboard);
