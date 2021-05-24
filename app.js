@@ -9,21 +9,26 @@ const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const flash = require('connect-flash');
 const session = require('express-session');
+const passport = require('passport');
 
 // 
 const dashboard = require('./routes/dashboard');
 const salespersons = require('./routes/salespersons');
 
 
-//
+// Environment Variables Configuration.
 dotenv.config();
+
+
+// Passport Configuration.
+require('./config/passport')(passport) ;
 
 
 // Models 
 const Salesperson = require('./models/salesperson') ;
 
 
-// 
+// Database Configuration.
 const sequelize = require('./config/db');
 
 
@@ -48,6 +53,10 @@ app.use(session(
     saveUninitialized: true
 }));
 
+// Passport Middleware.
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 // Connect Flash.
 app.use(flash());
@@ -67,11 +76,12 @@ app.use((req, res, next) =>
 {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
     next();
 });
 
 // Routes.
-app.use('/', dashboard);
+app.use('/dashboard', dashboard);
 app.use('/salespersons', salespersons);
 
 
