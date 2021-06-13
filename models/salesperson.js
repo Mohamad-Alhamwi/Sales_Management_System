@@ -74,6 +74,9 @@ const Salesperson = sequelize.define(
             type:  Sequelize.BLOB,
             allowNull: true
         }
+    },
+    {
+        freezeTableName: true
     }
 );
 
