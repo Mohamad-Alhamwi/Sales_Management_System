@@ -2,15 +2,16 @@
 
 <main class="wrapper">
    <div class="title">Sign In</div>
-      <form action="#"> 
+      <%- include ("./partials/messages"); %>
+      <form action="/salespersons/login" method="POST"> 
          <div class="form-row">
             <div class="input-data">
-               <input type="email" required>
+               <input type="email" name="email">
                <div class="underline"></div>
                <label for="">Email Address</label>
             </div>
             <div class="input-data">
-               <input type="password" required>
+               <input type="password" name="password">
                <div class="underline"></div>
                <label for="">Password</label>
             </div>
@@ -21,6 +22,6 @@
                <input type="submit" value="Sign In">
             </div>
          </div>
-         <div class="link"><a href="/salespersons/signUp">Do not Have an account ?<span>  Sign Up</span></a></div>
+         <div class="link"><a href="/salespersons/signUp">No Account ?<span>  Sign Up</span></a></div>
       </form>
 </main>

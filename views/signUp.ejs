@@ -2,30 +2,31 @@
 
 <main class="wrapper">
    <div class="title">Sign Up</div>
-      <form action="#"> 
+      <%- include ("./partials/messages"); %>
+      <form action="/salespersons/signup" method="POST"> 
          <div class="form-row">
             <div class="input-data">
-               <input type="text" required>
+               <input type="text" name="first_name" value="<%= typeof first_name != 'undefined' ? first_name : '' %>">
                <div class="underline"></div>
                <label for="">First Name</label>
             </div>
             <div class="input-data">
-               <input type="text" required>
+               <input type="text" name="last_name" value="<%= typeof last_name != 'undefined' ? last_name : '' %>">
                <div class="underline"></div>
                <label for="">Last Name</label>
             </div>
             <div class="input-data">
-               <input type="email" required>
+               <input type="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>">
                <div class="underline"></div>
                <label for="">Email Address</label>
             </div>
             <div class="input-data">
-               <input type="password" required>
+               <input type="password" name="password" value="<%= typeof password != 'undefined' ? password : '' %>">
                <div class="underline"></div>
                <label for="">Password</label>
             </div>
             <div class="input-data">
-               <input type="password" required>
+               <input type="password" name="c_password" value="<%= typeof c_password != 'undefined' ? c_password : '' %>">
                <div class="underline"></div>
                <label for="">Confirm Password</label>
             </div>
