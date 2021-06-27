@@ -7,17 +7,34 @@ const passport = require('passport') ;
 // Calling Models
 const Salesperson = require('../models/salesperson') ;
 
+//
+const page_style = "../../css/signUp.css";
+
 
 // Log In Page.
 router.get('/login', (req, res) =>
 {
-    res.render('logIn');
+    let page_title = "Log In";
+    
+    res.render(
+    'logIn',
+    {
+        page_title,
+        page_style
+    });
 });
 
 // Sign Up Page.
 router.get('/signup', (req, res) =>
 {
-    res.render('signUp');
+    let page_title = "Sign Up";
+
+    res.render(
+    'signUp',
+    {
+        page_title,
+        page_style
+    });
 });
 
 // Sign Up Handle.
