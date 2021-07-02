@@ -9,14 +9,21 @@ router.get('/statistics', ensureAuthenticated, (req, res) =>
 {
     let page_title = "Statistics";
 
-    const { first_name, last_name, email } = req.user;
-
     res.render(
     'dashboard', 
     {
-        first_name,
-        last_name,
-        email,
+        page_title,
+        page_style
+    });
+});
+
+router.get('/profile', ensureAuthenticated, (req, res) =>
+{
+    let page_title = "Salesperson Profile";
+
+    res.render(
+    'profile', 
+    {
         page_title,
         page_style
     });
