@@ -15,7 +15,7 @@ header
     justify-content: space-between;
     align-items: center;
     padding: 15px 10%;
-    background-color: #0D5C75;
+    background-color: #BB2E3D;
 }
 
 .logo 
@@ -28,28 +28,64 @@ header
 
 .logo:hover 
 {
-    color: #0088a9;
+    color: #17041E;
 }
 
-.profile
+.profile-dropdown
 {
     font-weight: 500;
-    color: #edf0f1;
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
-    border: none;
-    border-radius: 50px;
+    color: #17041E;
+    padding: 3px 10px;
     cursor: pointer;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
     transition: background-color 0.3s ease 0s;
 }
 
-.profile:hover 
+.profile-dropdown:hover 
 {
-    background-color: rgba(0, 136, 169, 0.8);
+    background-color: #17041E;
+    color: #FFFFFF;
+}
+
+.profile-dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 50px;
+    right: 50px;
+    border-radius: 5%;
+}
+
+.profile-dropdown-content a 
+{
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: #2F0642;
+}
+
+.profile-dropdown-content a:hover 
+{
+    background-color: #E5D1B8;
+    border-radius: 5%;
+    color: #f9f9f9;;
+}
+
+.profile-dropdown:hover .profile-dropdown-content 
+{
+    display: block;
 }
 
 /* Mobile Nav */
-
 .menu 
 {
     display: none;
@@ -57,7 +93,7 @@ header
 
 @media only screen and (max-width: 800px) 
 {
-    .profile 
+    .profile-dropdown 
     {
         display: none;
     }
