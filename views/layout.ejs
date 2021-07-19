@@ -23,6 +23,22 @@
         <!-- End Container Section -->
 
         <!-- Start Scripts Section -->
+        <script>
+            const doc = document;
+            const menuOpen = doc.querySelector(".menu");
+            const menuClose = doc.querySelector(".close");
+            const mobile_menu = doc.querySelector(".mobile-menu");
+
+            menuOpen.addEventListener("click", () => 
+            {
+                mobile_menu.classList.add("mobile-menu--active");
+            });
+
+            menuClose.addEventListener("click", () => 
+            {
+                mobile_menu.classList.remove("mobile-menu--active");
+            });
+        </script>
         <script 
                 src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
