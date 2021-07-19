@@ -6,7 +6,7 @@
         <i class="fas fa-user"></i>
 
         <div class="profile-dropdown-content">
-            <a href="/dashboard/profile">
+            <a href="/dashboard/profile" class="<%= path === '/dashboard/profile' ? 'active' : ''%>">
                 <i class="fas fa-id-card"></i>
                 Profile
             </a>
@@ -19,6 +19,48 @@
 
     <div class="profile-dropdown menu">Menu</div>
 </header>
+
+<div class="mobile-menu">
+    <a class="close">&times;</a>
+    <div class="mobile-menu-content">
+        <a href="/dashboard/profile" class="<%= path === '/dashboard/profile' ? 'active' : ''%>">
+            <i class="fas fa-id-card"></i>
+            Profile
+        </a>
+        <a href="/dashboard/statistics" class="<%= path === '/dashboard/statistics' ? 'active' : ''%>">
+            <i class="fas fa-chart-bar"></i>
+            Statistics
+        </a>
+        <a href="/dashboard/customers" class="<%= path === '/dashboard/customers' ? 'active' : ''%>">
+            <i class="fas fa-users"></i>
+            Customers
+        </a>
+        <a href="/dashboard/services" class="<%= path === '/dashboard/services' ? 'active' : ''%>">
+            <i class="fas fa-cloud"></i>
+            Services
+        </a>
+        <a href="/dashboard/products" class="<%= path === '/dashboard/products' ? 'active' : ''%>">
+            <i class="fas fa-dice-d6"></i>
+            Products
+        </a>
+        <a href="/dashboard/visits" class="<%= path === '/dashboard/visits' ? 'active' : ''%>">
+            <i class="fas fa-calendar-alt"></i>
+            Visits
+        </a>
+        <a href="/dashboard/orders" class="<%= path === '/dashboard/orders' ? 'active' : ''%>">
+            <i class="fas fa-shopping-cart"></i>
+            Orders
+        </a>
+        <a href="/dashboard/bills" class="<%= path === '/dashboard/bills' ? 'active' : ''%>">
+            <i class="fas fa-file-invoice-dollar"></i>
+            Bills
+        </a>
+        <a href="/salespersons/login">
+            <i class="fas fa-sign-out-alt"></i>
+            Sign Out
+        </a>
+    </div>
+</div>
 <!-- End Header Section -->
 
 <!-- Start Aside Section -->
