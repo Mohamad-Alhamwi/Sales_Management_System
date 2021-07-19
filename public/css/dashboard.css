@@ -9,55 +9,62 @@
     font-family: "Poppins", sans-serif;
 }
 
+body
+{
+    background-color: #EEEEEE;
+}
+
 header 
 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10%;
-    background-color: #BB2E3D;
+    padding: 16px 32px 16px 32px;
+    background-color: #FAFAFA;
+    box-shadow: 0px 0px 16px 0px #1B1B1B;
 }
 
 .logo 
 {
     cursor: pointer;
-    color: #edf0f1;
+    color: #1B1B1B;
     font-weight: 500;
     text-transform: uppercase;
+    margin-left: 50px;
 }
 
 .logo:hover 
 {
-    color: #17041E;
+    color: #FC6E20;
 }
 
 .profile-dropdown
 {
     font-weight: 500;
-    color: #17041E;
+    color: #1B1B1B;
     padding: 3px 10px;
     cursor: pointer;
-    background-color: #FFFFFF;
-    border: none;
+    border: #1B1B1B solid 1px;
     border-radius: 50%;
     transition: background-color 0.3s ease 0s;
+    margin-right: 50px;
 }
 
 .profile-dropdown:hover 
 {
-    background-color: #17041E;
-    color: #FFFFFF;
+    color: #FC6E20;
+    border: #FC6E20 solid 1px;
 }
 
 .profile-dropdown-content 
 {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #FAFAFA;
+    min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    top: 50px;
+    top: 45px;
     right: 50px;
     border-radius: 5%;
 }
@@ -65,19 +72,19 @@ header
 .profile-dropdown-content a 
 {
     float: none;
-    color: black;
+    color: #1B1B1B;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
-    color: #2F0642;
+    font-size: 20px;
 }
 
 .profile-dropdown-content a:hover 
 {
-    background-color: #E5D1B8;
+    background-color: #FC6E20;
     border-radius: 5%;
-    color: #f9f9f9;;
+    color: #F9F9F9;
 }
 
 .profile-dropdown:hover .profile-dropdown-content 
@@ -91,6 +98,125 @@ header
     display: none;
 }
 
+.side-menu 
+{
+    display: block;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    left: 0;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+    );
+    overflow-x: auto;
+    padding-top: 60px;
+    box-shadow: 5px -1px 5px -6px #1B1B1B;
+}
+
+.side-menu a 
+{
+    padding: 16px 8px 16px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+.side-menu a.active 
+{
+    background-color: #FC6E20;
+    color: white;
+}
+
+.side-menu a:hover:not(.active) 
+{
+    background-color: #92CD28;
+    color: white;
+}
+
+.mobile-menu 
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    background-color: #EEEEEE;
+    overflow-x: hidden;
+    transition: width 0.5s ease 0s;
+}
+
+.mobile-menu a.active 
+{
+    background-color: #FC6E20;
+    color: white;
+}
+
+.mobile-menu a:hover:not(.active) 
+{
+    background-color: #92CD28;
+    color: white;
+}
+
+.mobile-menu--active 
+{
+    width: 100%;
+}
+
+.mobile-menu-content 
+{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu a 
+{
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    color: #818181;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:focus 
+{
+    color: #FC6E20;
+}
+
+.mobile-menu .close 
+{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #1B1B1B;
+}
+
+.mobile-menu .close:hover
+{
+    color: #FC6E20;
+}
+
+@media screen and (max-height: 450px) 
+{
+    .mobile-menu a 
+    {
+        font-size: 20px;
+    }
+    
+    .mobile-menu .close 
+    {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
 @media only screen and (max-width: 800px) 
 {
     .profile-dropdown 
@@ -101,5 +227,16 @@ header
     .menu 
     {
         display: initial;
+    }
+
+    .side-menu
+    {
+        display: none;
+        padding-top: 15px;
+    }
+    
+    .side-menu a 
+    {
+        font-size: 18px;
     }
 }
